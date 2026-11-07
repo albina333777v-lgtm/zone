@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Zone — курсы английского в Бишкеке</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600;700&display=swap">
+<style>
+/* ===== Вариант 1 «Зона» — стиль их Instagram: чёрный круг со следом, градиентное кольцо сторис, разрядка букв ===== */
+:root{
+  --ink:#000;--paper:#fff;--soft:#F4F4F5;--line:#DBDBDB;--muted:#6E6E73;--link:#00376B;
+  --ring:conic-gradient(from 210deg,#FEDA75,#FA7E1E,#D62976,#962FBF,#4F5BD5,#FEDA75);
+  --ring-l:linear-gradient(90deg,#FA7E1E,#D62976,#962FBF);
+  --rainbow:linear-gradient(180deg,#FF5A4E 0 20%,#FFB02E 20% 40%,#FFE14D 40% 60%,#2FC48D 60% 80%,#3D8BFF 80%);
+  --h:"Unbounded",system-ui,sans-serif;--b:"Onest",system-ui,"Segoe UI",sans-serif;
+  --mb-bg:#fff;--mb-fg:#000;--ph-bg:#EDEDEF;--ph-fg:#A6A6AD;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--b);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{display:block}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:3px solid #962FBF;outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--h);font-weight:700;margin:0;line-height:1.12}
+h2{font-size:clamp(26px,3vw,38px);letter-spacing:-.01em}
+.lead{color:var(--muted);font-size:17px;max-width:52ch;margin:10px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:12px;padding:14px 20px;font:600 15.5px/1 var(--b);text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn svg{width:19px;height:19px}
+.btn-wa{background:#25D366;color:#fff}
+.btn-blk{background:var(--ink);color:#fff}
+.btn-gis{background:#2FB540;color:#fff}
+.btn-out{background:var(--soft);color:var(--ink)}
+.btn:hover{filter:brightness(.94)}
+
+/* шапка */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:22px;height:68px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo .dot{width:40px;height:40px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;box-shadow:0 0 0 2px #fff,0 0 0 4px #D62976}
+.logo .dot svg{width:15px;height:20px}
+.logo b{font:700 13px/1 var(--h);letter-spacing:.42em}
+.logo small{display:block;font:500 11.5px/1.2 var(--b);color:var(--muted);letter-spacing:0;margin-top:4px}
+.nav{display:flex;gap:18px;margin-left:8px}
+.nav a{text-decoration:none;font-weight:500;font-size:14.5px;color:#262626}
+.nav a:hover{color:#000;text-decoration:underline;text-underline-offset:5px}
+.hd-r{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tel{font-weight:700;font-size:16.5px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.tel svg{width:17px;height:17px}
+.hd .btn{padding:10px 14px;font-size:14px;border-radius:10px}
+.lang{display:flex;background:var(--soft);border-radius:10px;padding:3px}
+.lang button{border:0;background:none;font:700 12.5px var(--b);padding:6px 9px;border-radius:7px;cursor:pointer;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:#000;color:#fff}
+
+/* герой = профиль Instagram */
+.hero{padding:44px 0 26px}
+.prof{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center}
+.avatar{width:280px;height:280px;border-radius:50%;padding:8px;background:var(--ring);position:relative;justify-self:center}
+.avatar::after{content:"";position:absolute;inset:8px;border-radius:50%;box-shadow:0 0 0 8px #fff inset}
+.avatar .in{width:100%;height:100%;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;border:8px solid #fff}
+.avatar .in svg{width:96px;height:128px}
+@media (prefers-reduced-motion:no-preference){
+  .avatar{animation:spin 1.6s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes spin{from{transform:rotate(-200deg) scale(.85);opacity:0}to{transform:none;opacity:1}}
+  .avatar .in svg{animation:step 1.6s .5s both}
+  @keyframes step{0%{transform:translateY(30px);opacity:0}100%{transform:none;opacity:1}}
+}
+.handle{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:17px}
+.handle a{font-weight:600;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.handle a svg{width:18px;height:18px}
+.handle .verified{color:var(--muted);font-size:14px}
+.big{font:700 clamp(30px,4.3vw,56px)/1.06 var(--h);letter-spacing:.06em;margin:16px 0 0;text-transform:uppercase}
+.big .ft{display:inline-block;width:.62em;height:.82em;vertical-align:-.06em;color:#962FBF}
+.sub{font-size:18.5px;max-width:48ch;margin:16px 0 0}
+.sub b{background:linear-gradient(transparent 62%,#FEDA75 62%)}
+.stats{display:flex;gap:34px;margin:22px 0 0;padding:0;list-style:none;flex-wrap:wrap}
+.stats li{font-size:15px;color:var(--muted)}
+.stats b{display:block;color:#000;font:700 22px/1.1 var(--h);margin-bottom:3px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+
+/* хайлайты-меню */
+.hl{display:flex;gap:26px;padding:30px 0 6px;overflow-x:auto;scrollbar-width:none}
+.hl::-webkit-scrollbar{display:none}
+.hl a{flex:0 0 auto;width:92px;text-align:center;text-decoration:none;font-size:13px;font-weight:600}
+.hl .c{width:84px;height:84px;margin:0 auto 8px;border-radius:50%;border:1px solid var(--line);padding:4px;transition:transform .2s}
+.hl .c i{width:100%;height:100%;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center}
+.hl .c svg{width:26px;height:26px}
+.hl .c.white i{background:#fff;color:#000;border:1px solid var(--line)}
+.hl .c.rb i{background:#000}
+
+.hl a:hover .c{transform:scale(1.06)}
+
+/* секции */
+.sec{padding:62px 0}
+.sec.soft{background:var(--soft)}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px}
+.mark{display:flex;align-items:center;gap:14px}
+.mark .ic{flex:0 0 auto;width:54px;height:54px;border-radius:50%;padding:3px;background:var(--ring)}
+.mark .ic i{width:100%;height:100%;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;border:3px solid #fff}
+.mark .ic svg{width:21px;height:21px}
+.sec.soft .mark .ic i{border-color:var(--soft)}
+
+/* правила + копилка */
+.rules{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:stretch}
+.rl{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.rl li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.rl li b{display:block;font-size:17px}
+.rl li span{color:var(--muted);font-size:15px}
+.rl .n{width:44px;height:44px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;font:700 16px var(--h)}
+.jar{background:#000;color:#fff;border-radius:28px;padding:28px;display:grid;grid-template-columns:1fr 170px;gap:22px;position:relative;overflow:hidden}
+.jar h3{font-size:22px;line-height:1.2}
+.jar p{color:#BDBDBD;margin:8px 0 16px;font-size:15px}
+.jar label{font-size:13.5px;color:#BDBDBD;display:block;margin-bottom:6px}
+.jar textarea{width:100%;resize:none;height:84px;border-radius:14px;border:0;padding:12px 14px;font:500 17px/1.4 var(--b);background:#1C1C1E;color:#fff}
+.jar textarea:focus{outline:2px solid #D62976}
+.words{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;min-height:34px}
+.words span{padding:5px 10px;border-radius:9px;background:#1C1C1E;font-size:14.5px}
+.words span.ru{background:#D62976;color:#fff;text-decoration:line-through;text-decoration-thickness:2px}
+.fine{margin-top:14px;font:700 20px/1.2 var(--h)}
+.fine small{display:block;font:400 13.5px var(--b);color:#BDBDBD;margin-top:6px}
+.jar-svg{align-self:end;width:170px;height:220px}
+.jar-svg .coin{transition:transform .5s cubic-bezier(.3,1.4,.5,1),opacity .3s}
+.total{position:absolute;right:28px;top:24px;font-size:12.5px;color:#BDBDBD;text-align:right}
+.total b{display:block;color:#fff;font:700 18px var(--h)}
+
+/* расписание = сетка постов */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.post{min-height:280px;background:#000;color:#fff;padding:24px;display:flex;flex-direction:column;position:relative}
+.post:nth-child(2){background:#fff;color:#000;outline:1px solid var(--line);outline-offset:-1px}
+.post .tm{font:700 26px/1 var(--h);letter-spacing:.04em}
+.post .tm small{display:block;font:500 14px var(--b);letter-spacing:0;opacity:.7;margin-top:8px}
+.post ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:9px;font-size:15px}
+.post li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:8px}
+.post:nth-child(2) li{border-color:var(--line)}
+.post li span{opacity:.7;white-space:nowrap}
+.post .btn{margin-top:auto;padding-top:11px;align-self:flex-start;padding:11px 15px;font-size:14px}
+.post .tag{position:absolute;top:22px;right:22px;width:22px;height:22px;opacity:.85}
+.note{display:flex;gap:10px;align-items:center;margin-top:18px;color:var(--muted);font-size:15px}
+.note svg{width:20px;height:20px;color:#000}
+
+/* сезонные наборы */
+.seasons{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.ss{border:1px solid var(--line);border-radius:22px;padding:20px 22px;background:#fff;display:flex;gap:16px;align-items:center}
+.ss .c{flex:0 0 auto;width:62px;height:62px;border-radius:50%;padding:3px;background:var(--ring)}
+.ss .c i{width:100%;height:100%;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;border:3px solid #fff;font:700 13px var(--h)}
+.ss.kids .c{background:conic-gradient(#FF5A4E,#FFB02E,#FFE14D,#2FC48D,#3D8BFF,#FF5A4E)}
+.ss b{display:block;font-size:17px}
+.ss span{color:var(--muted);font-size:14.5px}
+
+/* цены */
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pr{border:1px solid var(--line);border-radius:22px;padding:22px;background:#fff;display:flex;flex-direction:column}
+.pr h3{font-size:17px;font-weight:500;line-height:1.3}
+.pr .sum{font:700 30px/1 var(--h);margin:16px 0 4px}
+.pr .sum small{font:500 14px var(--b);color:var(--muted)}
+.pr ul{list-style:none;padding:0;margin:14px 0 18px;display:grid;gap:7px;font-size:14.5px;color:#333}
+.pr li{display:flex;gap:8px}
+.pr li svg{flex:0 0 16px;width:16px;height:16px;margin-top:3px}
+.pr .btn{margin-top:auto}
+.pr.hot{background:#000;color:#fff;border-color:#000}
+.pr.hot ul{color:#ddd}
+.pr.hot .sum small{color:#aaa}
+.trial{margin-top:16px;border-radius:22px;padding:3px;background:var(--ring-l)}
+.trial div{background:#fff;border-radius:19px;padding:18px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.trial b{font:700 19px var(--h)}
+.trial span{color:var(--muted);flex:1;min-width:220px}
+
+/* тест */
+.test{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
+.test-l ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.test-l li{display:flex;gap:10px;align-items:center;font-weight:500}
+.test-l li svg{width:20px;height:20px;color:#D62976}
+#qcard{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px;min-height:430px;--qa:#000;--qopt:var(--soft);--qh:var(--h);--qtrack:#E6E6E9;--qnext:var(--soft);--qr:14px}
+
+/* команда */
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.tm-c{text-align:center}
+.tm-c .ring{width:150px;height:150px;margin:0 auto 14px;border-radius:50%;padding:4px;background:var(--ring)}
+.tm-c .ph{width:100%;height:100%;border-radius:50%;border:4px solid #fff}
+.tm-c b{display:block;font-size:17px}
+.tm-c span{display:block;color:var(--muted);font-size:14px;line-height:1.4;margin-top:3px}
+.tm-c em{display:inline-block;font-style:normal;font-size:12.5px;font-weight:600;background:var(--soft);border-radius:8px;padding:4px 8px;margin-top:9px}
+
+/* отзывы = сторис */
+.rv{display:grid;grid-template-columns:1fr 360px 1fr;gap:34px;align-items:center}
+.rv-list{display:grid;gap:10px}
+.rv-list button{display:flex;align-items:center;gap:12px;background:none;border:0;padding:6px;border-radius:14px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.rv-list button:hover{background:#fff}
+.rv-list .c{width:52px;height:52px;border-radius:50%;padding:2.5px;background:var(--line);flex:0 0 auto}
+.rv-list button[aria-current="true"] .c{background:var(--ring)}
+.rv-list .c span{width:100%;height:100%;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;font:700 16px var(--h);border:2.5px solid var(--soft)}
+.rv-list b{display:block;font-size:15px}
+.rv-list small{color:var(--muted)}
+.story{height:450px;border-radius:26px;background:#000;color:#fff;padding:16px 22px 24px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.story::before{content:"";position:absolute;inset:auto -40% -40% -40%;height:70%;background:radial-gradient(closest-side,rgba(214,41,118,.55),transparent);pointer-events:none}
+.bars{display:flex;gap:4px}
+.bars i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.3);overflow:hidden}
+.bars i b{display:block;height:100%;width:0;background:#fff}
+.bars i.done b{width:100%}
+.st-h{display:flex;align-items:center;gap:10px;margin:14px 0 0;font-size:14px}
+.st-h .c{width:34px;height:34px;border-radius:50%;background:#fff;color:#000;display:grid;place-items:center;font:700 13px var(--h)}
+.st-h small{opacity:.65}
+.st-q{margin:auto 0 0;font:500 22px/1.38 var(--b);position:relative}
+.st-q::before{content:"“";display:block;font:700 70px/0.6 var(--h);color:#D62976;margin-bottom:12px}
+.stars{display:flex;gap:2px;color:#FEDA75;margin-top:16px;position:relative}
+.stars svg{width:18px;height:18px}
+.st-nav{position:absolute;inset:60px 0 0;display:grid;grid-template-columns:1fr 1fr}
+.st-nav button{background:none;border:0;cursor:pointer}
+.rv-r{display:grid;gap:14px}
+.score{background:#fff;border-radius:22px;padding:22px}
+.score b{font:700 44px/1 var(--h)}
+.score p{margin:6px 0 0;color:var(--muted);font-size:14.5px}
+
+/* филиалы + контакты */
+.br{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bc{border:1px solid var(--line);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:12px;background:#fff}
+.bc.main{border:2px solid #000}
+.bc .top{display:flex;gap:14px;align-items:center}
+.bc .c{width:66px;height:66px;border-radius:50%;padding:3px;background:var(--line);flex:0 0 auto}
+.bc.main .c{background:var(--ring)}
+.bc .c i{width:100%;height:100%;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;border:3px solid #fff}
+.bc .c svg{width:18px;height:24px}
+.bc h3{font-size:16px;letter-spacing:.06em}
+.bc .ad{color:var(--muted);font-size:15px}
+.bc .chip{align-self:flex-start;font-size:12.5px;font-weight:600;background:#000;color:#fff;border-radius:8px;padding:4px 9px}
+.bc .row{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
+.bc .row .btn{padding:11px 14px;font-size:14px;flex:1}
+.contact{margin-top:18px;background:#000;color:#fff;border-radius:26px;padding:26px 30px;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.contact .ph-big{font:700 clamp(24px,2.6vw,34px)/1 var(--h);text-decoration:none;letter-spacing:.02em}
+.contact .hrs{display:flex;align-items:center;gap:9px;color:#ccc}
+.contact .hrs svg{width:20px;height:20px}
+.contact .row{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+footer{padding:28px 0 36px;color:var(--muted);font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ===== планшет / телефон ===== */
+@media (max-width:1100px){
+  .nav{display:none}
+  .prices{grid-template-columns:1fr 1fr}
+  .team{grid-template-columns:repeat(3,1fr)}
+  .rv{grid-template-columns:1fr 340px}
+  .rv-r{display:none}
+}
+@media (max-width:760px){
+  html{scroll-padding-top:70px}
+  .wrap{width:calc(100% - 32px)}
+  .hd{height:60px;gap:10px}
+  .logo b{font-size:9.5px;letter-spacing:.18em}
+  .logo{gap:8px}
+  .logo .dot{width:34px;height:34px}
+  .hd-r{gap:6px}
+  .lang button{padding:6px 7px}
+  .logo small{display:none}
+  .hd .btn-wa span,.hd .btn-gis{display:none}
+  .tel span{display:none}
+  .tel{width:40px;height:40px;border-radius:10px;background:var(--soft);justify-content:center}
+  .hd .btn-wa{padding:0;width:40px;height:40px}
+  .hero{padding:24px 0 10px}
+  .prof{grid-template-columns:1fr;gap:20px;text-align:left}
+  .avatar{width:150px;height:150px;padding:5px;justify-self:start}
+  .avatar .in{border-width:5px}
+  .avatar .in svg{width:42px;height:56px}
+  .big{font-size:27px;letter-spacing:.04em}
+  .sub{font-size:16.5px}
+  .stats{gap:22px}
+  .stats b{font-size:18px}
+  .cta .btn{flex:1}
+  .hl{gap:14px;padding-top:22px}
+  .hl a{width:74px;font-size:12px}
+  .hl .c{width:68px;height:68px}
+  .sec{padding:52px 0}
+  .sh{flex-direction:column;align-items:flex-start;margin-bottom:22px}
+  .mark .ic{width:44px;height:44px}
+  .rules,.test{grid-template-columns:1fr;gap:24px}
+  .jar{grid-template-columns:1fr;padding:22px}
+  .jar-svg{display:none}
+  .total{position:static;text-align:left;margin-top:6px}
+  .posts{grid-template-columns:1fr;gap:10px}
+  .post{aspect-ratio:auto;border-radius:20px}
+  .seasons,.br{grid-template-columns:1fr}
+  .prices{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:0 16px 6px}
+  .pr{flex:0 0 78%;scroll-snap-align:start}
+  #qcard{padding:20px;min-height:0}
+  .team{display:flex;overflow-x:auto;gap:16px;margin-inline:-16px;padding:0 16px 6px}
+  .tm-c{flex:0 0 150px}
+  .tm-c .ring{width:120px;height:120px}
+  .rv{grid-template-columns:1fr}
+  .rv-list{display:flex;overflow-x:auto;gap:4px}
+  .rv-list button{flex-direction:column;flex:0 0 auto;width:74px;text-align:center;gap:5px}
+  .rv-list small{display:none}
+  .rv-list b{font-size:12.5px}
+  .story{height:470px}
+  .st-q{font-size:19px}
+  .contact{padding:22px}
+  .contact .row{margin-left:0;width:100%}
+  .contact .row .btn{flex:1}
+}
+</style>
+</head>
+<body>
+<!--SWITCH:START-->
+<style>
+  .sw-bar{position:sticky;top:0;z-index:100;display:none;align-items:center;gap:12px;flex-wrap:wrap;
+    background:#141414;color:#fff;font:500 13px/1.2 system-ui,"Segoe UI",sans-serif;
+    padding:7px max(12px,env(safe-area-inset-right)) 7px max(12px,env(safe-area-inset-left))}
+  body.has-sw .sw-bar{display:flex}
+  body.has-sw header{top:var(--swh,44px)}
+  .sw-bar .sw-t{font-weight:700;letter-spacing:.08em;white-space:nowrap}
+  .sw-bar .sw-t span{font-weight:400;letter-spacing:0;color:#9a9a9a;margin-left:6px}
+  .sw-bar .sw-g{display:flex;background:#2a2a2a;border-radius:9px;padding:3px}
+  .sw-bar .sw-g:first-of-type{margin-left:auto}
+  .sw-bar a{color:#cfcfcf;text-decoration:none;padding:6px 11px;border-radius:7px;white-space:nowrap}
+  .sw-bar a:hover{color:#fff}
+  .sw-bar a[aria-current="true"]{background:#fff;color:#141414;font-weight:600}
+  .sw-bar a:focus-visible{outline:2px solid #FFAE2B;outline-offset:2px}
+  @media (max-width:700px){.sw-bar .sw-t{display:none}.sw-bar .sw-g:first-of-type{margin-left:0}.sw-bar .sw-g{flex:1}.sw-bar a{flex:1;text-align:center;padding:6px 4px}}
+</style>
+<nav class="sw-bar" aria-label="Переключатель макетов"><div class="sw-t">ENGLISH ZONE<span>макеты сайта</span></div><div class="sw-g" role="group" aria-label="Сайт"><a href="v1-zona.html" aria-current="true">1 · Зона</a><a href="v2-shagi.html" aria-current="false">2 · Шаги</a><a href="v3-sezon.html" aria-current="false">3 · Сезон</a></div><div class="sw-g" role="group" aria-label="Устройство"><a href="v1-zona.html" aria-current="true">ПК</a><a href="index.html#v1-mob" aria-current="false">Телефон</a></div></nav>
+<script>if(window.top===window.self){document.body.classList.add("has-sw");const swh=()=>{const h=document.querySelector(".sw-bar").offsetHeight;document.body.style.setProperty("--swh",h+"px");document.documentElement.style.scrollPaddingTop=(h+90)+"px";};swh();addEventListener("resize",swh);}</script>
+<!--SWITCH:END-->
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top" aria-label="English Zone — наверх">
+      <span class="dot"><svg viewBox="0 0 24 32"><use href="#i-foot"/></svg></span>
+      <span><b>ENGLISHZONE</b><small data-kg="Англис тили зонасы">Зона английского языка</small></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#schedule" data-kg="Жадыбал">Расписание</a>
+      <a href="#prices" data-kg="Баалар">Цены</a>
+      <a href="#test" data-kg="Тест">Тест</a>
+      <a href="#team" data-kg="Мугалимдер">Преподаватели</a>
+      <a href="#reviews" data-kg="Пикирлер">Отзывы</a>
+      <a href="#branches" data-kg="Филиалдар">Филиалы</a>
+    </nav>
+    <div class="hd-r">
+      <a class="tel" href="tel:+996770692299" aria-label="Позвонить"><svg><use href="#i-phone"/></svg><span>+996 770 69 22 99</span></a>
+      <a class="btn btn-wa" data-wa href="#"><svg><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+      <a class="btn btn-gis" data-gis href="#"><svg><use href="#i-pin"/></svg>2ГИС</a>
+      <div class="lang" role="group" aria-label="Язык"><button data-l="ru">RU</button><button data-l="kg">KG</button></div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- ===== Герой: как профиль Instagram ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="prof">
+      <div class="avatar" aria-hidden="true"><div class="in"><svg viewBox="0 0 24 32"><use href="#i-foot"/></svg></div></div>
+      <div>
+        <div class="handle"><a href="https://www.instagram.com/ezone_kg" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>ezone_kg</a><span class="verified" data-kg="Бишкектеги англис тили курстары">курсы английского в Бишкеке</span></div>
+        <h1 class="big">We speak only English here!</h1>
+        <p class="sub" data-kg="Сабакта — <b>англисче гана</b>, биринчи күндөн. Орусча ар бир сөз үчүн — 10 сом кайрымдуулукка.">На уроке — <b>только английский</b>, с первого дня. За каждое русское слово — 10 сом на благотворительность.</p>
+        <ul class="stats">
+          <li><b>31,5 <span data-kg="миң">тыс.</span></b><span data-kg="Instagramда окурман">подписчиков в Instagram</span></li>
+          <li><b>3</b><span data-kg="филиал Бишкекте">филиала в Бишкеке</span></li>
+          <li><b><span data-kg="ДШ–ЖМ">ПН–ПТ</span></b>9:10–21:30</li>
+        </ul>
+        <div class="cta">
+          <a class="btn btn-blk" data-wa href="#"><svg><use href="#i-wa"/></svg><span data-kg="Сынамык сабакка жазылуу">Записаться на пробный урок</span></a>
+          <a class="btn btn-out" href="#test"><svg><use href="#i-q"/></svg><span data-kg="Деңгээлди билүү">Узнать свой уровень</span></a>
+        </div>
+      </div>
+    </div>
+    <nav class="hl" aria-label="Быстрое меню">
+      <a href="#branches"><div class="c white"><i><svg viewBox="0 0 24 32"><use href="#i-foot"/></svg></i></div><span data-kg="Филиалдар">Филиалы</span></a>
+      <a href="#schedule"><div class="c"><i><svg><use href="#i-cal"/></svg></i></div><span data-kg="Жадыбал">Расписание</span></a>
+      <a href="#prices"><div class="c"><i><svg><use href="#i-tag"/></svg></i></div><span data-kg="Баалар">Цены</span></a>
+      <a href="#test"><div class="c"><i><svg><use href="#i-q"/></svg></i></div><span data-kg="Тест">Тест</span></a>
+      <a href="#reviews"><div class="c"><i><svg><use href="#i-star"/></svg></i></div><span>Reviews</span></a>
+      <a href="#seasons"><div class="c rb"><i><svg viewBox="0 0 24 32" style="width:22px;height:30px"><defs><linearGradient id="rbw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5A4E"/><stop offset=".3" stop-color="#FFB02E"/><stop offset=".5" stop-color="#FFE14D"/><stop offset=".7" stop-color="#2FC48D"/><stop offset="1" stop-color="#3D8BFF"/></linearGradient></defs><g fill="url(#rbw)"><ellipse cx="4.2" cy="5.6" rx="2.6" ry="3.2"/><circle cx="9" cy="3.2" r="1.9"/><circle cx="12.6" cy="2.9" r="1.6"/><circle cx="15.8" cy="3.8" r="1.4"/><circle cx="18.6" cy="5.4" r="1.25"/><path d="M5.5 10.5c3.8-1.6 9.6-1.4 12.2 1.6 2.2 2.6.9 6-1.4 8.4-1.8 1.9-2 3.8-1.6 6 .5 2.8-1.5 5-4.3 5-3.2 0-4.6-2.6-4.1-5.6.4-2.3-.4-3.7-2.1-5.6-2.3-2.6-2.4-8 1.3-9.8z"/></g></svg></i></div>Kids camp</a>
+      <a href="#rules"><div class="c"><i><svg><use href="#i-check"/></svg></i></div><span data-kg="Эрежелер">Правила</span></a>
+      <a href="#team"><div class="c"><i><svg><use href="#i-users"/></svg></i></div><span data-kg="Мугалимдер">Команда</span></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ===== Правила + копилка ===== -->
+<section class="sec soft" id="rules">
+  <div class="wrap rules">
+    <div>
+      <div class="mark"><span class="ic"><i><svg><use href="#i-check"/></svg></i></span><h2 data-kg="Эреже бирөө: English гана">Правило одно: только English</h2></div>
+      <p class="lead" data-kg="Ушундан улам биздин окуучулар 2–3 айдан кийин сүйлөй башташат: мээ которууну токтотуп, англисче ойлоно баштайт.">Поэтому наши студенты начинают говорить уже через 2–3 месяца: мозг перестаёт переводить и начинает думать по-английски.</p>
+      <ul class="rl">
+        <li><span class="n">1</span><div><b data-kg="Эшиктен кирдиңизби — англисче сүйлөйсүз">Зашли в дверь — говорите по-английски</b><span data-kg="Ресепшнде, коридордо, тыныгууда да.">На ресепшене, в коридоре и на перемене тоже.</span></div></li>
+        <li><span class="n">2</span><div><b data-kg="Орусча сөз — 10 сом копилкага">Русское слово — 10 сом в копилку</b><span data-kg="Акча толугу менен кайрымдуулукка кетет.">Все деньги уходят на благотворительность.</span></div></li>
+        <li><span class="n">3</span><div><b data-kg="Ката кетирүү — кадыресе нерсе">Ошибаться — нормально</b><span data-kg="Мугалим токтотпойт, сабактан кийин оңдойт.">Преподаватель не перебивает, а поправляет после.</span></div></li>
+      </ul>
+    </div>
+    <div class="jar" aria-live="polite">
+      <div>
+        <h3 data-kg="Копилкага канча кетет?">Сколько уйдёт в копилку?</h3>
+        <p data-kg="Сабактагыдай фраза жазыңыз — орусча сөздөрдү эсептейбиз.">Напишите фразу, как на уроке — посчитаем русские слова.</p>
+        <label for="jarIn" data-kg="Сиздин фраза">Ваша фраза</label>
+        <textarea id="jarIn" spellcheck="false">Teacher, можно I go to туалет, пожалуйста?</textarea>
+        <div class="words" id="jarWords"></div>
+        <div class="fine" id="jarFine"></div>
+      </div>
+      <svg class="jar-svg" viewBox="0 0 170 220" aria-hidden="true">
+        <rect x="52" y="8" width="66" height="18" rx="5" fill="#2A2A2D"/>
+        <path d="M44 34h82c10 0 16 8 16 18v134c0 14-10 26-26 26H54c-16 0-26-12-26-26V52c0-10 6-18 16-18z" fill="none" stroke="#5A5A60" stroke-width="3"/>
+        <g id="coins"></g>
+        <text x="85" y="128" text-anchor="middle" fill="#5A5A60" font-family="Unbounded" font-size="11" font-weight="700">CHARITY</text>
+      </svg>
+      <div class="total"><span data-kg="2025-жылы чогулду*">Собрано в 2025*</span><b>48 270 сом</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Расписание ===== -->
+<section class="sec" id="schedule">
+  <div class="wrap">
+    <div class="sh">
+      <div class="mark"><span class="ic"><i><svg><use href="#i-cal"/></svg></i></span><h2 data-kg="Жадыбал">Расписание</h2></div>
+      <p class="lead" style="margin:0" data-kg="Топтор ДШ·ШР·ЖМ же ШЕ·БШ. Сабак — 90 мүнөт, топто 6–8 адам.">Группы ПН·СР·ПТ или ВТ·ЧТ. Урок — 90 минут, в группе 6–8 человек.</p>
+    </div>
+    <div class="posts">
+      <article class="post">
+        <svg class="tag"><use href="#i-clock"/></svg>
+        <div class="tm" data-kg="Эртең<small>9:10–13:00 · иштебеген чоңдор жана студенттер</small>">Утро<small>9:10–13:00 · студенты и свободный график</small></div>
+        <ul>
+          <li>Beginner<span data-kg="ДШ·ШР·ЖМ 9:10">ПН·СР·ПТ 9:10</span></li>
+          <li>Pre-Intermediate<span data-kg="ДШ·ШР·ЖМ 11:00">ПН·СР·ПТ 11:00</span></li>
+          <li>Intermediate<span data-kg="ШЕ·БШ 10:00">ВТ·ЧТ 10:00</span></li>
+        </ul>
+        <a class="btn btn-wa" data-wa="Здравствуйте! Хочу в утреннюю группу. Какие есть места?" data-wa-kg="Саламатсызбы! Эртең мененки топко жазылгым келет. Орун барбы?" href="#"><svg><use href="#i-wa"/></svg><span data-kg="Орун сурап билүү">Узнать про места</span></a>
+      </article>
+      <article class="post">
+        <svg class="tag"><use href="#i-users"/></svg>
+        <div class="tm" data-kg="Күндүз<small>14:00–18:00 · балдар жана өспүрүмдөр</small>">День<small>14:00–18:00 · дети и подростки</small></div>
+        <ul>
+          <li>Kids 7–10<span data-kg="ДШ·ШР·ЖМ 14:00">ПН·СР·ПТ 14:00</span></li>
+          <li>Kids 10–13<span data-kg="ШЕ·БШ 15:30">ВТ·ЧТ 15:30</span></li>
+          <li>Teens 13–16<span data-kg="ДШ·ШР·ЖМ 16:30">ПН·СР·ПТ 16:30</span></li>
+        </ul>
+        <a class="btn btn-wa" data-wa="Здравствуйте! Хочу записать ребёнка в дневную группу. Ребёнку ... лет." data-wa-kg="Саламатсызбы! Баламды күндүзгү топко жазгым келет. Балам ... жашта." href="#"><svg><use href="#i-wa"/></svg><span data-kg="Баланы жазуу">Записать ребёнка</span></a>
+      </article>
+      <article class="post">
+        <svg class="tag"><use href="#i-laptop"/></svg>
+        <div class="tm" data-kg="Кеч<small>18:30–21:30 · иштегендер үчүн</small>">Вечер<small>18:30–21:30 · для работающих</small></div>
+        <ul>
+          <li>Elementary<span data-kg="ШЕ·БШ 19:00">ВТ·ЧТ 19:00</span></li>
+          <li>Intermediate<span data-kg="ДШ·ШР·ЖМ 20:00">ПН·СР·ПТ 20:00</span></li>
+          <li>IELTS 7.0+<span data-kg="ДШ·ШР·ЖМ 18:30">ПН·СР·ПТ 18:30</span></li>
+        </ul>
+        <a class="btn btn-wa" data-wa="Здравствуйте! Хочу в вечернюю группу. Какие есть места?" data-wa-kg="Саламатсызбы! Кечки топко жазылгым келет. Орун барбы?" href="#"><svg><use href="#i-wa"/></svg><span data-kg="Орун сурап билүү">Узнать про места</span></a>
+      </article>
+    </div>
+    <p class="note"><svg><use href="#i-pin"/></svg><span data-kg="Жадыбал үч филиалда тең бирдей. Speaking Club — жума сайын, 19:30.">Расписание одинаковое во всех трёх филиалах. Speaking Club — по пятницам в 19:30.</span></p>
+
+    <div class="seasons" id="seasons">
+      <div class="ss"><div class="c"><i data-kg="Сен">Сен</i></div><div><b data-kg="Күзгү топтор">Осенний набор</b><span data-kg="Сентябрда старт · 8 ай">старт в сентябре · 8 месяцев</span></div></div>
+      <div class="ss"><div class="c"><i data-kg="Янв">Янв</i></div><div><b data-kg="Кышкы топтор">Зимний набор</b><span data-kg="Январда старт · жайга чейин">старт в январе · до лета</span></div></div>
+      <div class="ss kids"><div class="c"><i data-kg="Жай">Лето</i></div><div><b>Kids Camp</b><span data-kg="Июнь–август · 7–13 жаш, оюндар англисче">июнь–август · 7–13 лет, игры на английском</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Цены ===== -->
+<section class="sec soft" id="prices">
+  <div class="wrap">
+    <div class="sh">
+      <div class="mark"><span class="ic"><i><svg><use href="#i-tag"/></svg></i></span><h2 data-kg="Баалар">Цены</h2></div>
+      <p class="lead" style="margin:0" data-kg="Айына, 12 сабак. Окуу китептери кошулган.">За месяц, 12 уроков. Учебники включены.</p>
+    </div>
+    <div class="prices">
+      <div class="pr"><h3 data-kg="Чоңдор тобу">Группа для взрослых</h3><div class="sum">4 500 <small data-kg="сом / ай">сом / мес</small></div>
+        <ul><li><svg><use href="#i-check"/></svg><span data-kg="Beginner → Advanced">Beginner → Advanced</span></li><li><svg><use href="#i-check"/></svg><span data-kg="6–8 адам">6–8 человек</span></li></ul>
+        <a class="btn btn-out" data-wa="Здравствуйте! Интересует группа для взрослых, 4 500 сом." data-wa-kg="Саламатсызбы! Чоңдор тобу кызыктырат, 4 500 сом." href="#"><span data-kg="Тандоо">Выбрать</span></a></div>
+      <div class="pr"><h3 data-kg="Балдар жана өспүрүмдөр">Дети и подростки</h3><div class="sum">4 000 <small data-kg="сом / ай">сом / мес</small></div>
+        <ul><li><svg><use href="#i-check"/></svg><span data-kg="7–16 жаш">7–16 лет</span></li><li><svg><use href="#i-check"/></svg><span data-kg="Ата-энеге ай сайын отчёт">Отчёт родителям каждый месяц</span></li></ul>
+        <a class="btn btn-out" data-wa="Здравствуйте! Интересует группа для ребёнка, 4 000 сом." data-wa-kg="Саламатсызбы! Балага топ кызыктырат, 4 000 сом." href="#"><span data-kg="Тандоо">Выбрать</span></a></div>
+      <div class="pr hot"><h3 data-kg="IELTS даярдоо">Подготовка к IELTS</h3><div class="sum">6 000 <small data-kg="сом / ай">сом / мес</small></div>
+        <ul><li><svg><use href="#i-check"/></svg><span data-kg="Ай сайын пробный тест">Пробный тест каждый месяц</span></li><li><svg><use href="#i-check"/></svg><span data-kg="Максат — 7.0+">Цель — 7.0+</span></li></ul>
+        <a class="btn btn-wa" data-wa="Здравствуйте! Интересует подготовка к IELTS." data-wa-kg="Саламатсызбы! IELTS даярдоо кызыктырат." href="#"><svg><use href="#i-wa"/></svg><span data-kg="Тандоо">Выбрать</span></a></div>
+      <div class="pr"><h3 data-kg="Жеке сабак">Индивидуально</h3><div class="sum">1 000 <small data-kg="сом / сабак">сом / урок</small></div>
+        <ul><li><svg><use href="#i-check"/></svg><span data-kg="Ыңгайлуу убакыт">Удобное время</span></li><li><svg><use href="#i-check"/></svg><span data-kg="Онлайн же офлайн">Онлайн или офлайн</span></li></ul>
+        <a class="btn btn-out" data-wa="Здравствуйте! Интересуют индивидуальные уроки." data-wa-kg="Саламатсызбы! Жеке сабактар кызыктырат." href="#"><span data-kg="Тандоо">Выбрать</span></a></div>
+    </div>
+    <div class="trial"><div><b data-kg="Сынамык сабак — акысыз">Пробный урок — бесплатно</b><span data-kg="Деңгээлиңизди аныктайбыз, мугалим жана топ менен тааныштырабыз.">Определим уровень, познакомим с преподавателем и группой.</span><a class="btn btn-blk" data-wa href="#"><svg><use href="#i-wa"/></svg><span data-kg="Жазылуу">Записаться</span></a></div></div>
+  </div>
+</section>
+
+<!-- ===== Тест ===== -->
+<section class="sec" id="test">
+  <div class="wrap test">
+    <div class="test-l">
+      <div class="mark"><span class="ic"><i><svg><use href="#i-q"/></svg></i></span><h2 data-kg="Деңгээлиңизди 2 мүнөттө билиңиз">Узнайте уровень за 2 минуты</h2></div>
+      <p class="lead" data-kg="10 суроо — жөнөкөйдөн татаалга. Аягында деңгээл жана ылайыктуу топ.">10 вопросов — от простых к сложным. В конце покажем уровень и подходящую группу.</p>
+      <ul>
+        <li><svg><use href="#i-check"/></svg><span data-kg="Каттоосуз">Без регистрации</span></li>
+        <li><svg><use href="#i-check"/></svg><span data-kg="Жыйынтыкты WhatsAppка жөнөтсө болот">Результат можно отправить в WhatsApp</span></li>
+        <li><svg><use href="#i-check"/></svg><span data-kg="Сынамык сабакта деңгээлди тактайбыз">Точный уровень уточним на пробном уроке</span></li>
+      </ul>
+    </div>
+    <div id="qcard"></div>
+  </div>
+</section>
+
+<!-- ===== Команда ===== -->
+<section class="sec soft" id="team">
+  <div class="wrap">
+    <div class="sh">
+      <div class="mark"><span class="ic"><i><svg><use href="#i-users"/></svg></i></span><h2 data-kg="Мугалимдер">Преподаватели</h2></div>
+      <p class="lead" style="margin:0" data-kg="Ар бири эл аралык сертификат менен. Сабакта бир да орусча сөз жок.">Все с международными сертификатами. И да — на уроке ни слова по-русски.</p>
+    </div>
+    <div class="team">
+      <div class="tm-c"><div class="ring"><div class="ph"><svg class="ph-i"><use href="#i-person"/></svg></div></div><b data-kg="Айжан">Айжан</b><span data-kg="Башкы мугалим, IELTS">Head teacher, IELTS</span><em>IELTS 8.0</em></div>
+      <div class="tm-c"><div class="ring"><div class="ph"><svg class="ph-i"><use href="#i-person"/></svg></div></div><b data-kg="Тимур">Тимур</b><span data-kg="Чоңдор үчүн сүйлөшүү, Speaking Club">Разговорный для взрослых, Speaking Club</span><em>CELTA</em></div>
+      <div class="tm-c"><div class="ring"><div class="ph"><svg class="ph-i"><use href="#i-person"/></svg></div></div><b data-kg="Мээрим">Мээрим</b><span data-kg="Балдар 7–13, Kids Camp">Дети 7–13, Kids Camp</span><em>TKT</em></div>
+      <div class="tm-c"><div class="ring"><div class="ph"><svg class="ph-i"><use href="#i-person"/></svg></div></div><b data-kg="Дастан">Дастан</b><span data-kg="Грамматика, Intermediate+">Грамматика, Intermediate+</span><em>IELTS 7.5</em></div>
+      <div class="tm-c"><div class="ring"><div class="ph"><svg class="ph-i"><use href="#i-person"/></svg></div></div><b data-kg="Камила">Камила</b><span data-kg="Нөлдөн баштагандар, өспүрүмдөр">С нуля, подростки</span><em>TESOL</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Отзывы = сторис ===== -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="sh">
+      <div class="mark"><span class="ic"><i><svg><use href="#i-star"/></svg></i></span><h2 data-kg="Окуучулардын пикирлери">Отзывы студентов</h2></div>
+      <a class="btn btn-out" href="https://www.instagram.com/ezone_kg" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg><span data-kg="Дагы — REVIEWS хайлайтында">Ещё — в хайлайте REVIEWS</span></a>
+    </div>
+    <div class="rv">
+      <div class="rv-list" id="rvList"></div>
+      <div class="story" id="story" aria-live="polite">
+        <div class="bars" id="bars"></div>
+        <div class="st-h"><span class="c" id="stC"></span><div><b id="stN"></b><br><small id="stM"></small></div></div>
+        <p class="st-q" id="stQ"></p>
+        <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <div class="st-nav"><button type="button" id="stPrev" aria-label="Предыдущий отзыв"></button><button type="button" id="stNext" aria-label="Следующий отзыв"></button></div>
+      </div>
+      <div class="rv-r">
+        <div class="score"><b>4,9</b><p data-kg="2ГИСтеги орточо баа*">средняя оценка в 2ГИС*</p></div>
+        <div class="score"><b>2–3</b><p data-kg="ай — ушунча убакытта окуучулар сүйлөй баштайт">месяца — через столько студенты начинают говорить</p></div>
+        <a class="btn btn-gis" data-gis href="#"><svg><use href="#i-pin"/></svg><span data-kg="2ГИСте пикир калтыруу">Оставить отзыв в 2ГИС</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Филиалы и контакты ===== -->
+<section class="sec soft" id="branches">
+  <div class="wrap">
+    <div class="sh">
+      <div class="mark"><span class="ic"><i><svg viewBox="0 0 24 32" style="width:15px;height:20px"><use href="#i-foot"/></svg></i></span><h2 data-kg="Үч филиал">Три филиала</h2></div>
+      <p class="lead" style="margin:0" data-kg="Үйгө же ишке жакыныраагын тандаңыз.">Выберите тот, что ближе к дому или работе.</p>
+    </div>
+    <div class="br">
+      <div class="bc main"><div class="top"><div class="c"><i><svg viewBox="0 0 24 32"><use href="#i-foot"/></svg></i></div><div><h3>YUNUSALIEV</h3><div class="ad" data-kg="Юнусалиев көч., 129">ул. Юнусалиева, 129</div></div></div>
+        <span class="chip" data-kg="Башкы филиал">Главный филиал</span>
+        <div class="row"><a class="btn btn-gis" data-gis href="#"><svg><use href="#i-pin"/></svg><span data-kg="2ГИСте маршрут">Маршрут в 2ГИС</span></a></div></div>
+      <div class="bc"><div class="top"><div class="c"><i><svg viewBox="0 0 24 32"><use href="#i-foot"/></svg></i></div><div><h3>MANAS OFFICE</h3><div class="ad" data-kg="Манас пр. (дарек такталат)">пр. Манаса (адрес уточняется)</div></div></div>
+        <div class="row"><a class="btn btn-out" data-gis href="#"><svg><use href="#i-pin"/></svg>2ГИС</a></div></div>
+      <div class="bc"><div class="top"><div class="c"><i><svg viewBox="0 0 24 32"><use href="#i-foot"/></svg></i></div><div><h3>PANFILOV ST.</h3><div class="ad" data-kg="Панфилов көч. (дарек такталат)">ул. Панфилова (адрес уточняется)</div></div></div>
+        <div class="row"><a class="btn btn-out" data-gis href="#"><svg><use href="#i-pin"/></svg>2ГИС</a></div></div>
+    </div>
+    <div class="contact">
+      <a class="ph-big" href="tel:+996770692299">+996 770 69 22 99</a>
+      <span class="hrs"><svg><use href="#i-clock"/></svg><span data-kg="ДШ–ЖМ, 9:10–21:30">ПН–ПТ, 9:10–21:30</span></span>
+      <div class="row">
+        <a class="btn btn-wa" data-wa href="#"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+        <a class="btn" style="background:#fff;color:#000" href="https://www.instagram.com/ezone_kg" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@ezone_kg</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© English Zone, Бишкек</span><span data-kg="* — макеттеги мисал маалыматтар, такталат">* — примерные данные макета, уточняются</span></div></footer>
+
+<!--CORE:START-->
+<!-- Общая часть для всех вариантов English Zone (build.py вставляет её между CORE:START и CORE:END).
+     Здесь: значки (sprite), нижняя панель на телефоне, перевод RU/KG, ссылки WhatsApp.
+     Цвета панели задаёт вариант: --mb-bg, --mb-fg. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 .9c.3.1.4.2.5.3.1.2.1.7-.2 1.3z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5M16 4.8a3.4 3.4 0 0 1 0 6.4M18 14.8c2 .6 3.2 2.4 3.5 5.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 11v5c3.5 2.5 8.5 2.5 12 0v-5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.3 9.2a2.8 2.8 0 1 1 3.8 2.6c-.8.4-1.1.9-1.1 1.7v.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17.3" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4c0 3 1.5 4.5 3.3 4.8M17 6h3c0 3-1.5 4.5-3.3 4.8M12 14v4M8 21h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 19h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-foot" viewBox="0 0 24 32"><ellipse cx="4.2" cy="5.6" rx="2.6" ry="3.2" fill="currentColor"/><circle cx="9" cy="3.2" r="1.9" fill="currentColor"/><circle cx="12.6" cy="2.9" r="1.6" fill="currentColor"/><circle cx="15.8" cy="3.8" r="1.4" fill="currentColor"/><circle cx="18.6" cy="5.4" r="1.25" fill="currentColor"/><path fill="currentColor" d="M5.5 10.5c3.8-1.6 9.6-1.4 12.2 1.6 2.2 2.6.9 6-1.4 8.4-1.8 1.9-2 3.8-1.6 6 .5 2.8-1.5 5-4.3 5-3.2 0-4.6-2.6-4.1-5.6.4-2.3-.4-3.7-2.1-5.6-2.3-2.6-2.4-8 1.3-9.8z"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c.8-4.6 4-7 8-7s7.2 2.4 8 7z" fill="currentColor"/></symbol>
+</svg>
+
+<style>
+.mbar{display:none}
+.ph{position:relative;overflow:hidden;background:var(--ph-bg,#e9e3f4);color:var(--ph-fg,#9a8fb0)}
+.ph>svg.ph-i{position:absolute;left:50%;bottom:-6%;width:78%;height:78%;transform:translateX(-50%);opacity:.55}
+@media (max-width:760px){
+  body{padding-bottom:78px}
+  .mbar{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--mb-bg,#fff);box-shadow:0 -8px 24px rgba(30,10,50,.14)}
+  .mbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:14px;padding:8px 4px;font:700 12px/1.2 system-ui,sans-serif;text-decoration:none;color:var(--mb-fg,#222);background:rgba(127,127,127,.13)}
+  .mbar svg{width:22px;height:22px}
+  .mbar a.wa{background:#25D366;color:#fff;font-size:13px}
+  .mbar a.gis{background:#2FB540;color:#fff}
+}
+/* ===== Тест уровня (10 вопросов) — общий для всех вариантов.
+   Цвета задаёт вариант через переменные на контейнере:
+   --qa акцент, --qopt фон ответа, --qh шрифт заголовков, --qtrack пустые полоски,
+   --qnext фон блока «что дальше», --qcall/--qcallfg кнопка «Позвонить», --qr скругление */
+.qt{display:flex;flex-direction:column}
+.qt-prog{display:flex;gap:5px;margin-bottom:16px}
+.qt-prog i{flex:1;height:6px;border-radius:6px;background:var(--qtrack,rgba(127,127,127,.2))}
+.qt-prog i.on{background:var(--qa,#6B2C91)}
+.qt-n{font-size:13.5px;font-weight:600;opacity:.75}
+.qt-q{font-family:var(--qh,inherit);font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.3;margin:8px 0 18px}
+.qt-q u{text-decoration:none;border-bottom:3px dotted var(--qa,#6B2C91);padding:0 8px}
+.qt-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qt-opts button{border:0;background:var(--qopt,#fff);color:inherit;border-radius:var(--qr,16px);padding:14px 16px;text-align:left;font-family:inherit;font-weight:600;font-size:16px;line-height:1.2;cursor:pointer;box-shadow:inset 0 0 0 2px transparent;transition:box-shadow .15s,background .15s}
+.qt-opts button:hover:not(:disabled){box-shadow:inset 0 0 0 2px var(--qa,#6B2C91)}
+.qt-opts button.ok{background:#1FA36B;color:#fff}
+.qt-opts button.no{background:#E5484D;color:#fff}
+.qt-opts button:disabled{cursor:default}
+.qt-lvl{font-family:var(--qh,inherit);font-weight:700;font-size:clamp(30px,3.6vw,42px);line-height:1.05;color:var(--qa,#6B2C91);margin:6px 0 8px}
+.qt-dots{display:flex;gap:4px;margin:2px 0 12px}
+.qt-dots i{width:16px;height:8px;border-radius:4px;background:#E5484D;opacity:.75}
+.qt-dots i.ok{background:#1FA36B;opacity:1}
+.qt-res p{margin:0 0 14px}
+.qt-next{background:var(--qnext,rgba(127,127,127,.1));border-radius:var(--qr,16px);padding:14px 16px}
+.qt-next b{display:block;margin-bottom:10px}
+.qt-btns{display:flex;gap:8px;flex-wrap:wrap}
+.qt-btns a,.qt-btns button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:var(--qr,16px);padding:12px 16px;font-family:inherit;font-weight:700;font-size:15px;line-height:1;text-decoration:none;cursor:pointer;white-space:nowrap}
+.qt-btns svg{width:18px;height:18px}
+.qt-wa{background:#25D366;color:#fff}
+.qt-call{background:var(--qcall,var(--qa,#6B2C91));color:var(--qcallfg,#fff)}
+.qt-btns .qt-again{background:none;color:inherit;text-decoration:underline;opacity:.75;padding:12px 6px}
+@media (max-width:760px){.qt-opts{grid-template-columns:1fr}.qt-btns a{flex:1}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+<nav class="mbar" aria-label="Быстрая связь">
+  <a href="tel:+996770692299"><svg><use href="#i-phone"/></svg><span data-kg="Чалуу">Позвонить</span></a>
+  <a class="wa" data-wa href="https://wa.me/996770692299" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="gis" href="https://2gis.kg/bishkek/search/English%20Zone%20%D0%AE%D0%BD%D1%83%D1%81%D0%B0%D0%BB%D0%B8%D0%B5%D0%B2%D0%B0%20129" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>2ГИС</a>
+</nav>
+
+<script>
+/* ===== Перевод RU / KG =====
+   У любого элемента с текстом можно указать data-kg="кыргызский текст".
+   Кнопки переключения: любой элемент с data-l="ru" или data-l="kg".
+   Ссылки WhatsApp: <a data-wa="текст" data-wa-kg="текст"> — номер и готовое сообщение подставляются сами.
+   Ссылка 2ГИС: любой <a data-gis>. */
+(function(){
+  var WA = "https://wa.me/996770692299?text=";
+  var WA_RU = "Здравствуйте! Хочу записаться на пробный урок в English Zone";
+  var WA_KG = "Саламатсызбы! English Zoneдо сынамык сабакка жазылгым келет";
+  var GIS = "https://2gis.kg/bishkek/search/English%20Zone%20%D0%AE%D0%BD%D1%83%D1%81%D0%B0%D0%BB%D0%B8%D0%B5%D0%B2%D0%B0%20129";
+  window.ENLANG = "ru";
+  function set(l){
+    window.ENLANG = l;
+    document.querySelectorAll("[data-kg]").forEach(function(e){
+      if (e.dataset.ru === undefined) e.dataset.ru = e.innerHTML;
+      e.innerHTML = l === "kg" ? e.dataset.kg : e.dataset.ru;
+    });
+    document.querySelectorAll("[data-kg-aria]").forEach(function(e){
+      if (e.dataset.ruAria === undefined) e.dataset.ruAria = e.getAttribute("aria-label") || "";
+      e.setAttribute("aria-label", l === "kg" ? e.dataset.kgAria : e.dataset.ruAria);
+    });
+    document.documentElement.lang = l === "kg" ? "ky" : "ru";
+    document.querySelectorAll("[data-l]").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.l === l); });
+    window.ENwa();
+    try { localStorage.setItem("en-lang", l); } catch (e) {}
+    document.dispatchEvent(new CustomEvent("enlang", {detail: l}));
+  }
+  window.ENwa = function(){
+    document.querySelectorAll("a[data-wa]").forEach(function(a){
+      var t = window.ENLANG === "kg" ? (a.dataset.waKg || WA_KG) : (a.dataset.wa || WA_RU);
+      a.href = WA + encodeURIComponent(t); a.target = "_blank"; a.rel = "noopener";
+    });
+    document.querySelectorAll("a[data-gis]").forEach(function(a){ a.href = GIS; a.target = "_blank"; a.rel = "noopener"; });
+  };
+  window.ENwaLink = function(t){ return WA + encodeURIComponent(t); };
+  document.addEventListener("click", function(e){ var b = e.target.closest("[data-l]"); if (b) set(b.dataset.l); });
+  var l = "ru"; try { l = localStorage.getItem("en-lang") || "ru"; } catch (e) {}
+  set(l);
+})();
+window.ENreduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ===== Тест уровня: ENtest(элемент) — 10 вопросов → результат → WhatsApp с результатом или звонок ===== */
+(function(){
+  var Q=[
+    ["She ___ from Bishkek.",["is","are","am","be"],0],
+    ["There ___ two books on the table.",["is","are","be","am"],1],
+    ["I ___ to the cinema yesterday.",["go","went","have gone","was go"],1],
+    ["He usually ___ coffee in the morning.",["drink","drinks","drinking","is drink"],1],
+    ["If it rains, we ___ at home.",["stay","will stay","would stay","stayed"],1],
+    ["I've lived here ___ 2019.",["for","since","from","during"],1],
+    ["This is the ___ film I've ever seen.",["good","better","best","most good"],2],
+    ["The letter ___ yesterday.",["sent","was sent","has sent","is sending"],1],
+    ["If I ___ you, I would take this job.",["am","was being","were","will be"],2],
+    ["I wish I ___ more time last year.",["have","had","had had","would have"],2]
+  ];
+  var LV=[
+    {n:"Beginner / Elementary",ru:"Начнём с основ. Подойдёт группа ПН·СР·ПТ 9:10 или вечерняя ВТ·ЧТ 19:00.",kg:"Негизден баштайбыз. ДШ·ШР·ЖМ 9:10 тобу же кечки ШЕ·БШ 19:00 тобу ылайык."},
+    {n:"Pre-Intermediate",ru:"Подойдёт группа ПН·СР·ПТ 11:00 или вечерняя ПН·СР·ПТ 18:30.",kg:"ДШ·ШР·ЖМ 11:00 тобу же кечки ДШ·ШР·ЖМ 18:30 тобу ылайык."},
+    {n:"Intermediate",ru:"Подойдёт группа ВТ·ЧТ 14:00 или вечерняя ПН·СР·ПТ 20:00 + Speaking Club.",kg:"ШЕ·БШ 14:00 тобу же кечки ДШ·ШР·ЖМ 20:00 тобу + Speaking Club ылайык."},
+    {n:"Upper-Intermediate",ru:"Подойдёт группа ВТ·ЧТ 19:00 — можно сразу с подготовкой к IELTS.",kg:"ШЕ·БШ 19:00 тобу ылайык — IELTS даярдоо менен."},
+    {n:"Advanced / IELTS",ru:"Вам в группу IELTS ПН·СР·ПТ 18:30 — цель 7.0+.",kg:"Сизге IELTS тобу ДШ·ШР·ЖМ 18:30 ылайык — максат 7.0+."}
+  ];
+  var MAP=[0,0,0,1,1,2,2,3,3,4,4];
+  window.ENtest=function(el){
+    var qi=0, ans=[], lock=false, n=Q.length;
+    el.classList.add("qt");
+    function draw(){
+      var kg=window.ENLANG==="kg";
+      var prog='<div class="qt-prog">'+Q.map(function(_,i){return '<i class="'+(i<=qi?"on":"")+'"></i>';}).join("")+'</div>';
+      if(qi>=n){
+        var sc=ans.filter(Boolean).length, r=LV[MAP[sc]];
+        var wa=kg?("Саламатсызбы! Сайттагы тесттен "+sc+"/10 алдым, деңгээлим — "+r.n+". Сынамык сабакка жазылгым келет.")
+                 :("Здравствуйте! Прошёл(а) тест на сайте: "+sc+" из 10, уровень "+r.n+". Хочу записаться на пробный урок.");
+        el.innerHTML=prog+'<div class="qt-res"><span class="qt-n">'+(kg?"Сиздин болжолдуу деңгээлиңиз":"Ваш примерный уровень")+'</span>'+
+          '<div class="qt-lvl">'+r.n+'</div>'+
+          '<div class="qt-dots" role="img" aria-label="'+sc+' / 10">'+ans.map(function(a){return '<i class="'+(a?"ok":"")+'"></i>';}).join("")+'</div>'+
+          '<p><b>'+(kg?("Туура жооптор: "+sc+" / 10. "):("Правильных ответов: "+sc+" из 10. "))+'</b>'+(kg?r.kg:r.ru)+'</p>'+
+          '<div class="qt-next"><b>'+(kg?"Эми эмне? Жыйынтыкты жөнөтүңүз — сынамык сабакка жазабыз жана деңгээлди тактайбыз.":"Что дальше? Отправьте результат — запишем на пробный урок и уточним уровень.")+'</b>'+
+          '<div class="qt-btns"><a class="qt-wa" target="_blank" rel="noopener" href="'+window.ENwaLink(wa)+'"><svg><use href="#i-wa"/></svg>'+(kg?"WhatsAppка жөнөтүү":"Отправить в WhatsApp")+'</a>'+
+          '<a class="qt-call" href="tel:+996770692299"><svg><use href="#i-phone"/></svg>'+(kg?"Чалуу":"Позвонить")+'</a>'+
+          '<button class="qt-again" type="button">'+(kg?"Кайра өтүү":"Пройти заново")+'</button></div></div></div>';
+        el.querySelector(".qt-again").onclick=function(){qi=0;ans=[];draw();};
+        return;
+      }
+      var q=Q[qi];
+      el.innerHTML=prog+'<span class="qt-n">'+(kg?"Суроо ":"Вопрос ")+(qi+1)+' / '+n+' · '+(kg?"Боштукту толтуруңуз":"Заполните пропуск")+'</span>'+
+        '<div class="qt-q">'+q[0].replace("___","<u>&nbsp;?&nbsp;</u>")+'</div>'+
+        '<div class="qt-opts">'+q[1].map(function(o,i){return '<button type="button" data-i="'+i+'">'+o+'</button>';}).join("")+'</div>';
+      el.querySelectorAll(".qt-opts button").forEach(function(b){
+        b.onclick=function(){
+          if(lock)return; lock=true;
+          var ok=+b.dataset.i===q[2]; ans.push(ok);
+          el.querySelectorAll(".qt-opts button").forEach(function(x){x.disabled=true; if(+x.dataset.i===q[2])x.classList.add("ok");});
+          if(!ok)b.classList.add("no");
+          setTimeout(function(){lock=false;qi++;draw();},window.ENreduced?150:650);
+        };
+      });
+    }
+    draw();
+    document.addEventListener("enlang",draw);
+  };
+})();
+</script>
+
+<!--CORE:END-->
+
+<script>
+/* ===== Копилка: считает слова кириллицей ===== */
+(function(){
+  var inp=document.getElementById("jarIn"), out=document.getElementById("jarWords"), fine=document.getElementById("jarFine"), coins=document.getElementById("coins");
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function run(){
+    var kg=window.ENLANG==="kg";
+    var w=inp.value.trim().split(/\s+/).filter(Boolean);
+    var n=0;
+    out.innerHTML=w.map(function(x){var ru=/[а-яёңөү]/i.test(x); if(ru)n++; return '<span class="'+(ru?"ru":"")+'">'+esc(x)+'</span>';}).join("");
+    fine.innerHTML=n
+      ? (kg?(n+" сөз × 10 сом = "+n*10+" сом"):(n+" "+(n%10===1&&n%100!==11?"слово":(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?"слова":"слов")+" × 10 сом = "+n*10+" сом"))+'<small>'+(kg?"Акча кайрымдуулукка кетет. Англисче кайра айтып көрүңүз!":"Деньги уйдут на благотворительность. Попробуйте сказать по-английски!")+'</small>'
+      : (kg?"0 сом — азаматсыз!":"0 сом — great job!")+'<small>'+(kg?"Бир да орусча сөз жок. Сиз биздин окуучуга окшошсуз.":"Ни одного русского слова. Вы уже говорите как наш студент.")+'</small>';
+    var k=Math.min(n,14), html="";
+    for(var i=0;i<k;i++){var x=55+((i*37)%60), y=196-Math.floor(i/3)*15-(i%3)*3; html+='<g class="coin"><ellipse cx="'+x+'" cy="'+y+'" rx="15" ry="6" fill="#FEDA75"/><ellipse cx="'+x+'" cy="'+(y-2)+'" rx="15" ry="6" fill="#FFC93C" stroke="#E2A400"/></g>';}
+    coins.innerHTML=html;
+  }
+  inp.addEventListener("input",run); document.addEventListener("enlang",run); run();
+})();
+
+/* ===== Отзывы-сторис с автолистанием ===== */
+(function(){
+  var R=[
+    {n:"Алина",m:"Intermediate · 4 мес",mk:"Intermediate · 4 ай",ru:"Первую неделю было страшно открыть рот. Через месяц я спорила с преподавателем по-английски — и выиграла.",kg:"Биринчи жумада оозумду ачканга коркчумун. Бир айдан кийин мугалим менен англисче талашып, жеңип чыктым."},
+    {n:"Бекжан",m:"IELTS 7.0",mk:"IELTS 7.0",ru:"Готовился к IELTS 3 месяца. Сдал на 7.0 — спасибо пробным тестам каждый месяц.",kg:"IELTSке 3 ай даярдандым. 7.0 алдым — ай сайынкы пробный тесттерге рахмат."},
+    {n:"Гульнара",m:"мама ученика, Kids",mk:"окуучунун апасы, Kids",ru:"Сын ходит с удовольствием и дома теперь сам включает мультики на английском.",kg:"Уулум кубанып барат, үйдө эми мультфильмдерди өзү англисче көрөт."},
+    {n:"Эрмек",m:"Pre-Intermediate · 2 мес",mk:"Pre-Intermediate · 2 ай",ru:"Правило про 10 сом работает лучше любой мотивации. За первую неделю отдал 200 сом, сейчас — ноль.",kg:"10 сом эрежеси эң мыкты мотивация. Биринчи жумада 200 сом бердим, азыр — нөл."},
+    {n:"Айдана",m:"Speaking Club",mk:"Speaking Club",ru:"Хожу в Speaking Club по пятницам — лучший способ закончить неделю. Атмосфера как с друзьями.",kg:"Жума сайын Speaking Clubка барам — жуманы аяктоонун эң жакшы жолу. Достор менен отургандай."}
+  ];
+  var i=0,t=null,DUR=6500,start=0,raf=null;
+  var list=document.getElementById("rvList"), bars=document.getElementById("bars");
+  function kg(){return window.ENLANG==="kg";}
+  function drawList(){
+    list.innerHTML=R.map(function(r,j){return '<button type="button" data-j="'+j+'" aria-current="'+(j===i)+'"><span class="c"><span>'+r.n[0]+'</span></span><span><b>'+r.n+'</b><small>'+(kg()?r.mk:r.m)+'</small></span></button>';}).join("");
+    bars.innerHTML=R.map(function(_,j){return '<i class="'+(j<i?"done":"")+'"><b></b></i>';}).join("");
+  }
+  function show(j){
+    i=(j+R.length)%R.length; var r=R[i];
+    document.getElementById("stC").textContent=r.n[0];
+    document.getElementById("stN").textContent=r.n;
+    document.getElementById("stM").textContent=kg()?r.mk:r.m;
+    document.getElementById("stQ").textContent=kg()?r.kg:r.ru;
+    drawList(); start=performance.now(); cancelAnimationFrame(raf);
+    if(!window.ENreduced) raf=requestAnimationFrame(tick);
+  }
+  function tick(now){
+    var p=Math.min(1,(now-start)/DUR), b=bars.children[i]&&bars.children[i].firstChild;
+    if(b)b.style.width=(p*100)+"%";
+    if(p>=1){show(i+1);return;}
+    raf=requestAnimationFrame(tick);
+  }
+  list.addEventListener("click",function(e){var b=e.target.closest("button");if(b)show(+b.dataset.j);});
+  document.getElementById("stPrev").onclick=function(){show(i-1);};
+  document.getElementById("stNext").onclick=function(){show(i+1);};
+  document.addEventListener("enlang",function(){show(i);});
+  show(0);
+})();
+
+ENtest(document.getElementById("qcard"));
+</script>
+</body>
+</html>
